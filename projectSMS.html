@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Management System</title>
+</head>
+<body>
+	<h1 align="center">Student Management System</h1>
+	<b><p id="dateis" align="right"></p></b>
+	<h2>Enter personal details:-</h2>
+	<label>First Name</label>
+	<input type="text" id="fname" onblur="capital()">
+	<span id="errorfn">*</span>
+	<br>
+	<br>
+	<label>Last Name</label>
+	<input type="text" id="lname" onblur="capital()">
+	<span id="errorln">*</span>
+	<br>
+	<br>
+	<label>Father's Name</label>
+	<input type="text" id="faname" onblur="capital()">
+	<span id="errorfan">*</span>
+	<br>
+	<br>
+	<label>Age</label>
+	<input type="text" id="age" onblur="funage()">
+	<span id="errorage">*</span>
+	<br>
+	<br>
+	<label>Gender-</label>
+	<input type="radio" id="male" name="rb">Male
+	<input type="radio" id="female" name="rb">Female
+	<input type="radio" id="other" name="rb">Other
+	<br>
+	<br>
+	<h2>Enter Contact Details:-</h2>
+	<label>Mobile no.</label>
+	<input type="text" id="num" onblur="validatenum()">
+	<span id="errorno">*</span>
+	<br>
+	<br>
+	<label>E-mail id</label>
+	<input type="text" id="email" onblur="validateEmailfun()">
+	<br>
+	<br>
+	<label>Address</label>
+	<span id="erroradd">*</span>
+	<br>
+	<textarea id="addtextarea"></textarea>
+	<br>
+	<br>
+	<h2>Educational Details:-</h2>
+	<label>Choose your last educational qualification:</label>
+	<select onchange="qualificationfun()" id="edu">
+	<option>Select</option>
+	<option>High School</option>
+	<option>Bachelor's Degree</option>
+	<option>Master's Degree</option>
+	<option>Research scholar</option>
+	</select>
+	<br>
+	<br>
+	<label>Enter gpa</label>
+	<input type="text" id="gpa" onblur="fungpa()" onblur="funpercentage()">
+	<span id="erroradd">*</span>
+	<br>
+	<br>
+	<label>Percentage scored</label>
+	<p id="percent"></p>
+	<br>
+	<br>
+	<div align="center">
+		<button id="reset">Reset</button>
+		<button id="submit">Submit</button>
+	</div>
+	<script type="text/javascript">
+		//command for date
+		var d=new Date();
+		document.getElementById('dateis').innerHTML=d;
+		//button action Listeners
+		document.getElementById('reset').addEventListener('click',funreset);
+		document.getElementById('submit').addEventListener('click',isempty);
+		function funreset() //reset button command
+		{
+			document.getElementById('fname').value=("");
+			document.getElementById('lname').value=("");
+			document.getElementById('faname').value=("");
+			document.getElementById('age').value=("");
+			document.getElementById('num').value=("");
+			document.getElementById('email').value=("");
+			document.getElementById('addtextarea').value=("");
+			document.getElementById('percent').value=("");
+		}
+
+		function capital() //capitalising all letters in the name text boxes
+		{
+			var a=document.getElementById('fname').value.toUpperCase();
+			document.getElementById('fname').value=a;
+			for(i=0;i<a.length;i++)
+			{
+				var x=a.charCodeAt(i);
+				if(x>=65&&x<=90)
+				{
+					var a=document.getElementById('fname').value=a;
+				}
+				else
+				{
+					alert("Enter alphabets only !!!");
+					break;
+				}
+			}
+			var b=document.getElementById('lname').value.toUpperCase();
+			document.getElementById('lname').value=b;
+			for(i=0;i<b.length;i++)
+			{
+				var x=b.charCodeAt(i);
+				if(x>=65&&x<=90)
+				{
+					var b=document.getElementById('lname').value=b;
+				}
+				else
+				{
+					alert("Enter alphabets only !!!");
+					break;
+				}
+			}
+			var c=document.getElementById('faname').value.toUpperCase();
+			document.getElementById('faname').value=c;
+			for(i=0;i<c.length;i++)
+			{
+				var x=c.charCodeAt(i);
+				if(x>=65&&x<=90||x==32)
+				{
+					var c=document.getElementById('faname').value=c;
+				}
+				else
+				{
+					alert("Enter alphabets only !!!");
+					break;
+				}
+			}
+		}
+
+		function qualificationfun() //select box code
+		{
+			var choice=document.getElementById('edu').value;
+		}
+
+		function validateEmailfun() //validating email only
+		{
+			var str=document.getElementById('email').value;
+			var at=str.indexOf("@");;
+			var dot=str.lastIndexOf(".");
+			if(document.getElementById('email').value=="")
+			{
+				alert('Skip email?');
+			}
+			if(document.getElementById('email').value!="")
+			{
+				if(at==-1||dot==-1)
+				{
+					alert("Invalid email Id");
+				}
+				if(at>dot)
+				{
+					alert("Invalid email Id");
+				}
+			}
+		}
+
+		function isempty() //check if any field is left empty *asterisk code
+		{
+			if(document.getElementById('fname').value=="")
+			{
+				var g=document.getElementById('errorfn').innerHTML="*this field cannot be empty";
+				document.getElementById('errorfn').style.color='red';
+			}
+			if(document.getElementById('lname').value=="")
+			{
+				var g=document.getElementById('errorln').innerHTML="*this field cannot be empty";
+				document.getElementById('errorln').style.color='red';
+			}
+			if(document.getElementById('faname').value=="")
+			{
+				var g=document.getElementById('errorfan').innerHTML="*this field cannot be empty";
+				document.getElementById('errorfan').style.color='red';
+			}
+			if(document.getElementById('age').value=="")
+			{
+				var g=document.getElementById('errorage').innerHTML="*this field cannot be empty";
+				document.getElementById('errorage').style.color='red';
+			}
+			if(document.getElementById('num').value=="")
+			{
+				var g=document.getElementById('errorno').innerHTML="*this field cannot be empty";
+				document.getElementById('errorno').style.color='red';
+			}
+			if(document.getElementById('addtextarea').value=="")
+			{
+				var g=document.getElementById('erroradd').innerHTML="*this field cannot be empty";
+				document.getElementById('erroradd').style.color='red';
+			}
+			if(document.getElementById('percent').value=="")
+			{
+				var g=document.getElementById('erroradd').innerHTML="*this field cannot be empty";
+				document.getElementById('erroradd').style.color='red';
+			}
+		}
+
+		function validatenum() //validate mobile number
+		{
+			var c=document.getElementById('num').value;
+			for(i=0;i<c.length;i++)
+			{
+				var x=c.charCodeAt(i);
+				{
+					if(c.length<10)
+					{
+						alert("Mobile number needs to be of 10 digits");
+					}
+				}
+				if(x>=48&&x<=57)
+				{
+					var c=document.getElementById('num').value=c;
+				}
+				else
+				{
+					alert("Enter numbers only !!!");
+				}
+			}
+		}
+
+		function funage() //validate age
+		{
+			var a=document.getElementById('age').value;
+			if(a<18||a>30)
+			{
+				alert("Enter correct age");
+			}
+		}
+
+		function fungpa() //validate gpa
+		{
+			var a=document.getElementById('gpa').value;
+			if(a>10||a<1)
+			{
+				alert("Enter a value in between 1 to 10");
+			}
+			funpercentage();                
+		}
+
+		function funpercentage() //calculate percentage
+		{
+			alert("Test");
+			var a=document.getElementById('gpa').value;
+			var x=a*9.5;
+			var para=document.createElement('p');
+			var node=document.createTextNode(x);
+			para.appendChild(node);
+			var element = document.getElementById("percent");
+			element.appendChild(para);
+		}
+	</script>
+</body>
+</html>
