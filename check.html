@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form name="f1">
+	<label>Name </label>
+	<input type="text" id="name">
+	<br>
+	<label>Facilities </label>
+	<input type="checkbox" id="ac" name="chk1" onclick="chk()">Air Conditioner
+	<input type="checkbox" id="parking" name="chk2" onclick="chk()">Parking
+	<input type="checkbox" id="tv" onclick="chk()">Television
+	<br>
+	<label>Price </label>
+	<input type="text" id="result">
+	</form>
+	<button id="back">GO BACK</button>
+	<button id="forward">GO FROWARD</button>
+	<script type="text/javascript">
+		document.getElementById('back').addEventListener('click',funGoback);
+		document.getElementById('forward').addEventListener('click',funGoforward);
+		function chk()
+		{
+			if(f1.chk1.checked)
+			{
+				alert("AC Checked")
+			}
+			if(f1.chk2.checked)
+			{
+				alert("Parking")
+			}
+		}
+		function funGoback()
+		{
+			window.history.back();
+		}
+		function funGoforward()
+		{
+			window.history.forward();
+		}
+	</script>
+</body>
+</html>

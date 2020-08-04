@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p>ppp</p>
+	<label>Enter data to be displayed.</label>
+	<br>
+	<br>
+	<div id="div1">
+		<textarea id="ta1">Type here...</textarea>
+	</div>
+	<br>
+	<br>
+	<label>Choose option: </label>
+	<select id="selection">
+	<option>Select</option>
+	<option>h1</option>
+	<option>p</option>
+	<option>body</option>
+	</select>
+	<br>
+	<br>
+	<input type="button" id="bttn" value="Click Here" onclick="choose()">
+	<button onclick="myFunction()">Remove Element</button>
+	<button onclick="count()">Count</button>
+	<br>
+	<br>
+	<input type="text" id="res">
+	<script type="text/javascript">
+	  	function choose()
+		{
+			var choice=document.getElementById('selection').value;
+			var para = document.createElement(choice);
+			var node = document.createTextNode(document.getElementById('ta1').value);
+			para.appendChild(node);
+
+			var element = document.getElementById("div1");
+			var child = document.getElementById("ta1");
+			element.insertBefore(para,child);
+
+		}
+
+		function myFunction() 
+		{
+			var elmnt = document.getElementById("div1");
+  			elmnt.remove();
+		}
+
+		function count()
+		{
+			
+			var choice=document.getElementById('selection').value;
+			var myNodelist = document.querySelectorAll('p');
+			document.getElementById("res").value =
+			"This document contains " + myNodelist.length + choice;
+		}
+	</script>
+</body>
+</html>

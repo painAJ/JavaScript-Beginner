@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<label>Number</label>
+<input type="text" id="num1">
+<input type="text" id="num2" onblur="fun()">
+<input type="text" id="res">
+
+<script type="text/javascript">
+	function fun()
+	{
+		var x=parseInt(document.getElementById('num1').value);
+		var y=parseInt(document.getElementById('num2').value);
+		document.getElementById('res').value=x+y;
+
+	}
+</script>
+</body>
+</html>

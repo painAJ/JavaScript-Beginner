@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<label>Enter Name</label>
+	<input type="text" id="name" onblur="namefn()">
+	<br>
+	<label>Enter Phone no.</label>
+	<input type="text" id="ph" onblur="nofn()">
+	<br>
+	<label>Enter e-mail id:</label>
+	<input type="text" id="email" onblur="mailfn()">
+	<br>
+	<script type="text/javascript">
+		function namefn()
+		{
+			var n=document.getElementById('name').value;
+			var n=n.toUpperCase();
+			for(i=0;i<n.length;i++)
+			{
+				var x=n.charCodeAt(i);
+				if(x>=65&&x<=90)
+				{
+					var n=document.getElementById('name').value=n;
+				}
+				else
+				{
+					alert("Enter alphabets only !!!");
+				}
+			}
+		}
+		function nofn()
+		{
+			var p=document.getElementById('ph').value;
+			var len=p.length;
+			if(len>10)
+			{
+				alert("Phone number should not exceed 10 digits ");
+				var p=document.getElementById('ph').value="";
+			}
+			for(j=0;j<p.length;j++)
+			{
+				var y=p.charCodeAt(j);
+				if(y>=48&&y<=57)
+				{
+					var p=document.getElementById('ph').value=p;
+				}
+				else
+				{
+					alert("Enter numbers only !!!");
+				}
+			}
+		} 
+		function mailfn()
+		{
+			var e=document.getElementById('email').value;
+			var at=e.indexOf("@");;
+			var dot=e.IndexOf(".");
+			if(at==-1||dot==-1)
+			{
+				alert("Invalid email Id");
+			}
+			else if(at>dot)
+			{
+				alert("Invalid email Id");
+			}
+			else
+			{
+				alert("Email entered");
+			}
+		}
+	</script>
+</body>
+</html>

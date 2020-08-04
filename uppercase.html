@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<label>First Name</label>
+	<input type="text" id="firstname" onblur="fun()">
+	<br>
+	<label>Middle Name</label>
+	<input type="text" id="middlename" onblur="fun()">
+	<br>
+	<label>Last Name</label>
+	<input type="text" id="lastname" onblur="fun()">
+	<br>
+	<input type="button" id="btn" onclick="fun()">
+	<script type="text/javascript">
+		function fun()
+		{
+			var fname=document.getElementById('firstname').value;
+			var a=fname.toUpperCase();
+			document.getElementById('firstname').value=a;
+			var mname=document.getElementById('middlename').value;
+			var b=mname.toUpperCase();
+			document.getElementById('middlename').value=b;
+			var lname=document.getElementById('lastname').value;
+			var c=lname.toUpperCase();
+			document.getElementById('lastname').value=c;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<label>Enter number 1:</label>
+	<input type="text" id="n1">
+	<br>
+	<label>Enter number 1:</label>
+	<input type="text" id="n2">
+	<br>
+	<input type="button" value="Addition" onclick="callSum()">
+	<input type="button" value="Substraction" onclick="callDifference()">
+	<input type="button" value="Multiplication" onclick="callProduct()">
+	<br>
+	<label>You Answer is:</label>
+	<input type="text" id="ans">
+	<script type="text/javascript">
+		class Addition
+		{
+			constructor(num1,num2)
+			{
+				this.num1=num1;
+				this.num2=num2;
+			}
+		}
+
+		class OperationAddition extends Addition
+		{
+			constructor(num1,num2)
+			{
+				super(num1,num2);
+			}
+			sum()
+			{
+				var sumis=(this.num1)+(this.num2);
+				document.getElementById('ans').value=sumis;
+			}
+		}
+
+		function callSum()
+		{
+			answer=new OperationAddition(document.getElementById('n1').value,document.getElementById('n2').value);
+			answer.sum();
+		}
+
+		class Substraction
+		{
+			constructor(num1,num2)
+			{
+				this.num1=num1;
+				this.num2=num2;
+			}
+		}
+
+		class OperationSubstraction extends Substraction
+		{
+			constructor(num1,num2)
+			{
+				super(num1,num2);
+			}
+			difference()
+			{
+				var diffis=this.num1-this.num2;
+			}
+		}
+
+		function callDifference()
+		{
+			answer=new OperationAddition(document.getElementById('n1').value,document.getElementById('n2').value);
+			document.getElementById('ans').value=diffis;
+		}
+	</script>
+</body>
+</html>

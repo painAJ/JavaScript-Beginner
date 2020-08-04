@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<label>Enter data to be displayed.</label>
+	<br>
+	<br>
+	<div id="div1">
+		<textarea id="ta1">this is a statement</textarea>
+	</div>
+	<br>
+	<br>
+	<label>Choose option: </label>
+	<select id="selection" onchange="tagchoose(this)" >
+	<option>Select</option>
+	<option>h1</option>
+	<option>p</option>
+	<option>body</option>
+	</select>
+	<br>
+	<br>
+	<input type="button" id="bttn" value="Click Here" onclick="choose()">
+	<br>
+	<br>
+	<label>Displayed data ....</label>
+	<br>
+	<br>
+	<script type="text/javascript">
+	  function choose()
+		{
+			var choice=document.getElementById('selection').value;
+			var para = document.createElement(choice);
+			var node = document.createTextNode(document.getElementById('ta1').value);
+			para.appendChild(node);
+
+			var element = document.getElementById("div1");
+			var child = document.getElementById("ta1");
+			element.insertBefore(para,child);
+		}
+	</script>
+</body>
+</html>

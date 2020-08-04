@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1 id="head1">Select color from the option...</h1>
+	<select onchange="fun(this)" id="selection">
+		<option>Select</option>
+		<option>Red</option>
+		<option>Blue</option>
+		<option>Green</option>
+	</select>
+	<script type="text/javascript">
+		function fun(str)
+		{
+			var a=document.getElementById('selection').value;
+			if(a=="Red")
+			{
+				document.getElementById('head1').style.color="red";
+			}
+			if(a=="Blue")
+			{
+				document.getElementById('head1').style.color="blue";
+			}
+			if(a=="Green")
+			{
+				document.getElementById('head1').style.color="green";
+			}
+		}
+	</script>
+</body>
+</html>

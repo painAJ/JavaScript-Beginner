@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="sname">
+<input type="button" onclick="val()">
+<span id="errorsane">*</span>
+<script type="text/javascript">
+	function val()
+	{
+		if(document.getElementById('sname').value=="")
+		{
+				document.getElementById('errorsane').innerHTML="plese fill the Student Name";
+		}
+	}
+</script>
+</body>
+</html>

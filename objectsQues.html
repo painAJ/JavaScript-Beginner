@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<label>Name</label>
+	<input type="text" id="name">
+	<br>
+	<label>Father's Name</label>
+	<input type="text" id="fname">
+	<br>
+	<label>Roll No.</label>
+	<input type="text" id="roll">
+	<br>
+	<input type="button" id="btn" onclick="fun()">
+	<br>
+	<label>Details are as follows:-</label>
+	<input type="text" id="show">
+	<script type="text/javascript">
+		function fun()
+		{
+			var details= new Object();
+			details.Name=document.getElementById('name').value;
+			details.fathersname=document.getElementById('fname').value;
+			details.rollno=document.getElementById('roll').value;
+			document.getElementById('show').value="Name is " +details.Name +" father's name is " +details.fathersname +" roll number is " +details.rollno;
+		}
+	</script>
+</body>
+</html>

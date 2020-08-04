@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<table border="1" id="tbl">
+		<tr>
+			<td>Quantity</td>
+			<td>Product Name</td>
+			<td>GST Amt</td>
+			<td>Action</td>
+		</tr>
+
+		<tr id="trfirst">
+			<td id="tdqty"><input type="text" id="qty1"></td>
+			<td><input type="text" id="pn1"></td>
+			<td><input type="text" id="amt1"></td>
+			<td><button id="bttn1">Click here</button></td>
+		</tr>
+
+		<tr id="trnew">
+			
+		</tr>
+		<script type="text/javascript">
+			document.getElementById('bttn1').addEventListener('click',actionFun)
+			function actionFun()
+			{
+				var list=document.querySelectorAll('trfirst');
+				document.getElementById('trnew').
+			}
+		</script>
+	</table>
+</body>
+</html>

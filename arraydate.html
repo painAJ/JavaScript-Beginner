@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<select onchange="fun(this)">
+		<option>Select Date Format</option>
+		<option value="1">  /  /  </option>
+		<option value="2">  .  .  </option>
+	</select>
+	
+		<input type="text" id="dd">
+		<input type="text" id="mm">
+		<input type="text" id="yyyy">
+		<input type="text" id="d">
+	
+	<script type="text/javascript">
+		function fun(str)
+		{
+			var dates=[document.getElementById('dd').value,document.getElementById('mm').value,document.getElementById('yyyy').value];
+			if(str.value=="1")
+			{
+				document.getElementById('d').value=dates.join("/");
+			}
+			if(str.value=="2") 
+			{
+				document.getElementById('d').value=dates.join(".");
+			}
+		}
+	</script>
+</body>
+</html>

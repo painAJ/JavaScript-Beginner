@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<label>Name </label>
+	<input type="text" id="name">
+	<br>
+	<label>Facilities </label>
+	<input type="checkbox" id="ac" onclick="fun()">Air Conditioner
+	<input type="checkbox" id="parking" onclick="fun()">Parking
+	<input type="checkbox" id="tv" onclick="fun()">Television
+	<br>
+	<label>Price </label>
+	<input type="text" id="result">
+	<script type="text/javascript">
+		function fun()
+		{
+			var x=0;
+			if(ac.checked)
+			{
+				x=x+100;
+				document.getElementById('result').value=x;
+			}
+			if(parking.checked)
+			{
+				x=x+200;
+				document.getElementById('result').value=x;
+			}
+			if(tv.checked)
+			{
+				x=x+300;
+				document.getElementById('result').value=x;
+			}
+		}
+	</script>
+</body>
+</html>

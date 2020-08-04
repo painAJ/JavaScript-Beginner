@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<label>Enter type choice.</label>
+	<input type="text" id="ch2">
+	<br>
+	<label>Enter number choice.</label>
+	<input type="text" id="ch1">
+	<br>
+	<input type="button" id="bttn" onclick="funPara()">
+	<br>
+	<h1>Heading One</h1>
+	<p id="first">This is para 1.</p>
+	<h1>Heading Two</h1>
+	<p id="second">This is para 2.</p>
+	<h1>Heading Three</h1>
+	<p id="third">This is para 3.</p>
+	<h1>Heading Four</h1>
+	<p id="fourth">This is para 4.</p>
+	<p id="demo1"></p>
+	<h1 id="demo2"></h1>
+	<label>The choosen para is: </label>
+	<br>
+		<script>
+			function funPara()
+			{
+				var ch1=parseInt(document.getElementById('ch1').value);
+				var value=document.getElementById('ch2').value;
+				var y=document.getElementsByTagName(value);
+				document.getElementById("demo1").innerHTML = 
+				'The text in first paragraph (index 0) is: ' + y[ch1-1].innerHTML;
+			}
+		</script>
+
+</body>
+</html>

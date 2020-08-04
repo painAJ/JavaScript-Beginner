@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<label>Click here to go back:</label>
+	<input type="button" onclick="funGoback()" value="Back">
+	<br>
+	<br>
+	<label>Click here to go forward:</label>
+	<input type="button" onclick="funGoforward()" value="Forward">
+	<br>
+	<br>
+	<label>Open new Window</label>
+	<input type="button" value="Open" onclick="funOpen()">
+	<br>
+	<br>
+	<label>Move to new Window</label>
+	<input type="button" value="Move To" onclick="funMoveTo()">
+	<p>An absolute URL: <a href="C:\\Users\\Pain\\Desktop\\javascript\\check.html">Next Page</a></p>
+	<script type="text/javascript">
+		function funGoback()
+		{
+			window.history.back();
+		}
+		function funGoforward()
+		{
+			window.history.forward();
+		}
+		function funOpen()
+		{
+			window.open("C:\\Users\\Pain\\Desktop\\javascript\\check.html");
+		}
+		function funMoveTo()
+		{
+			window.moveTo("C:\\Users\\Pain\\Desktop\\javascript\\check.html");
+		}
+	</script>
+</body>
+</html>

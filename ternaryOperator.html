@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<label>Enter number to check</label>
+	<input type="text" id="no">
+	<br>
+	<label>The number is </label>
+	<input type="text" id="answer">
+	<input type="button" id="btn" onclick="fun()">
+	<script type="text/javascript">
+		function fun()
+		{
+			var x=parseInt(document.getElementById('no').value);
+			var ans=(x%2==0) ? "Even":"Odd";
+			document.getElementById('answer').value=ans;
+		}	
+	</script>
+</body>
+</html>

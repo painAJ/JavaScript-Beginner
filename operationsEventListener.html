@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Operations</h1>
+	<label>Enter number 1:</label>
+	<input type="text" id="num1">
+	<br>
+	<label>Enter number 2:</label>
+	<input type="text" id="num2">
+	<br>
+	<h2>Addition</h2>
+	<label>Result is</label>
+	<input type="text" id="sum">
+	<h2>Substraction</h2>
+	<label>Result is</label>
+	<input type="text" id="diff">
+	<br>
+	<h2>Multiplication</h2>
+	<label>Result is</label>
+	<input type="text" id="prod">
+	<br>
+	<br>
+	<button id="bttn">Click here</button>
+	<script type="text/javascript">
+		document.getElementById('num2').addEventListener('blur',summation);
+		document.getElementById('num2').addEventListener('blur',difference);
+		document.getElementById('num2').addEventListener('blur',product);
+		function summation()
+		{
+			var a=parseInt(document.getElementById('num1').value);
+			var b=parseInt(document.getElementById('num2').value);
+			var c=a+b;
+			document.getElementById('sum').value=c;
+		}
+		function difference()
+		{
+			var a=parseInt(document.getElementById('num1').value);
+			var b=parseInt(document.getElementById('num2').value);
+			var c=a-b;
+			document.getElementById('diff').value=c;
+		}
+		function product()
+		{
+			var a=parseInt(document.getElementById('num1').value);
+			var b=parseInt(document.getElementById('num2').value);
+			var c=a*b;
+			document.getElementById('prod').value=c;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<label>Enter the number of units</label>
+	<br>
+	<input type="text" id="inp">
+	<br>
+	<label>Click here to get the amount </label>
+	<br>
+	<input type="button" id="btn" onclick="fun()">
+	<br>
+	<input type="text" id="amt">
+	<script type="text/javascript">
+		function fun()
+		{
+			var units=parseInt(document.getElementById('inp').value);
+			var amount=0;
+			if(units<=50)
+			{
+				amount=amount+(units*0.50);
+			}
+			else if(units<=150)
+			{
+				amount=amount+25+((units-50)*0.75);
+			}
+			else if(units<=250)
+			{
+				amount=amount+100+((units-150)*1.20);
+			}
+			else
+			{
+				amount=amount+220+(units*1.50);
+			}
+			var final=amount+(amount*0.20);
+			alert(amount);
+			document.getElementById('amt').value=final;
+		}
+	</script>
+
+
+</body>
+</html>

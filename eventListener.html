@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<label>Enter Name</label>
+	<input type="text" id="name">
+	<br>
+	<label>Enter Age</label>
+	<input type="text" id="age">
+	<br>
+	<button id="bttn">Click here to save the details.</button>
+	<script type="text/javascript">
+		
+		document.getElementById('bttn').addEventListener("click",fun);
+		function fun()
+		{
+			var a=document.getElementById('name').value;
+		var b=parseInt(document.getElementById('age').value);
+			alert("Name is "+a);
+			alert("Age is "+b);
+		}
+	</script>
+</body>
+</html>

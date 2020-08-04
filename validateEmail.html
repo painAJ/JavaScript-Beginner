@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<label>Enter email Id</label><br>
+	<input type="text" id="email">
+	<input type="button" id="btn" onclick="fun()">
+	<script type="text/javascript">
+		function fun()
+		{
+			var str=document.getElementById('email').value;
+			var at=str.indexOf("@");;
+			var dot=str.lastIndexOf(".");
+			if(at==-1||dot==-1)
+			{
+				alert("Invalid email Id");
+			}
+			else if(at>dot)
+			{
+				alert("Invalid email Id");
+			}
+			else
+			{
+				alert("Email entered");
+			}
+		}
+	</script>
+
+</body>
+</html>
